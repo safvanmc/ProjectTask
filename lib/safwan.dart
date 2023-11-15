@@ -58,7 +58,7 @@ class _Smpl1State extends State<Smpl1> {
         currentIndex: selectedindex,
         iconSize: 20,
         onTap: onitemTapped,
-        elevation: 5,
+        elevation: 10,
       ),
     );
   }

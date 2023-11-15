@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:safwan/safwan.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CuIcon extends StatefulWidget {
   const CuIcon({super.key});
@@ -10,6 +12,25 @@ class CuIcon extends StatefulWidget {
 
 class _CuIconState extends State<CuIcon> {
   final formkey = GlobalKey<FormState>();
+  void showalertDailog(BuildContext context){
+    showDialog(context: context, builder: (BuildContext context){
+     return AlertDialog(
+       title: Text("Submit"),
+       content: Text('Are you sure for submitting'),
+       actions: [
+         TextButton(onPressed: () {
+          launchUrl(Uri.parse('https://github.com/safvanmc/sample-projects/blob/main/lib/Drawerapp.dart'));
+         }, child: Text('Ok')),
+         TextButton(onPressed: () {
+           Navigator.pop(context);
+         }, child: Text('Cancel'))
+
+       ],
+     );
+    }
+    );
+
+  }
 
   var user = TextEditingController();
   var pass = TextEditingController();
@@ -38,10 +59,11 @@ class _CuIconState extends State<CuIcon> {
               },
             ),
             ElevatedButton(onPressed: () {
-              if(formkey.currentState!.validate());
+              if(formkey.currentState!.validate()){
 
-
-            }, child: Text('Submit'))
+                showalertDailog(context);
+              }
+              }, child: Text('Submit'))
           ],
         ),
       ),

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:safwan/SharedList.dart';
 import 'package:safwan/calander.dart';
 import 'package:safwan/cupertinoIcons.dart';
+import 'package:safwan/loginpage.dart';
 import 'package:safwan/safwan.dart';
+import 'package:safwan/shareprifference.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +37,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const CuIcon(),
+      home: Shareprif(),
     );
   }
 }

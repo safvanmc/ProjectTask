@@ -10,7 +10,7 @@ class Clnd2 extends StatefulWidget {
 class _Clnd2State extends State<Clnd2> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(resizeToAvoidBottomInset: false,
       backgroundColor: Colors.indigo,
       body: SafeArea(
           child: Padding(
